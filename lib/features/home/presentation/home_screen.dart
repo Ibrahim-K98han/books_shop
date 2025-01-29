@@ -29,10 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 20,
               ),
               //Custom App Bar
-              CustomAppBar(
-                icon: Icons.menu,
-                actionIconOne: Icons.notifications,
-              ),
+              const CustomAppBar(),
               const SizedBox(height: 20),
               //Search Bar
               const SearchBarWidget(),
