@@ -1,4 +1,3 @@
-import 'package:ecom_provider/features/home/data/category.dart';
 import 'package:ecom_provider/features/home/model/category_model.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +27,8 @@ class CategoryWidget extends StatelessWidget {
               ),
               Text(
                 categories[index].title,
-                style: TextStyle(
+                textAlign: TextAlign.center,
+                style: const TextStyle(
                   fontSize: 12,
                 ),
               )
