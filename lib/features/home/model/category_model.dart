@@ -10,19 +10,19 @@ class CategoryModel {
 
 final List<CategoryModel> categories = [
   CategoryModel(
-    title: '''Qur'an and Tafseer''',
+    title: '''Qur'an and\n Tafseer''',
     image: 'images/quran_hadit.png',
   ),
   CategoryModel(
-    title: '''Hadith and Sunnah''',
+    title: '''Hadith and\n Sunnah''',
     image: 'images/hadit.jpg',
   ),
   CategoryModel(
-    title: '''Nabi-rasul, sahaba''',
+    title: '''Nabi-rasul,\n sahaba''',
     image: 'images/navi_rasul.png',
   ),
   CategoryModel(
-    title: '''Salat/namaj''',
+    title: '''Salat / namaj''',
     image: 'images/salat.png',
   ),
   CategoryModel(
