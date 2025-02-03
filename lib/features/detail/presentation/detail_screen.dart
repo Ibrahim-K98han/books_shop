@@ -1,4 +1,5 @@
 import 'package:ecom_provider/constants.dart';
+import 'package:ecom_provider/features/detail/presentation/widgets/add_to_cart.dart';
 import 'package:ecom_provider/features/detail/presentation/widgets/description.dart';
 import 'package:ecom_provider/features/detail/presentation/widgets/details_custom_app_bar.dart';
 import 'package:ecom_provider/features/detail/presentation/widgets/image_slider_widget.dart';
@@ -24,6 +25,8 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kContentColor,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: AddToCart(productModel: widget.productModel),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

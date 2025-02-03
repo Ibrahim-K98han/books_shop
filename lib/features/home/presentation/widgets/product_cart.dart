@@ -35,14 +35,17 @@ class ProductCart extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 15,
+                  height: 5,
                 ),
                 Center(
-                  child: Image.asset(
-                    width: 130,
-                    height: 150,
-                    productModel.img,
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: productModel.img,
+                    child: Image.asset(
+                      width: 150,
+                      height: 150,
+                      productModel.img,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -61,35 +64,62 @@ class ProductCart extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '\$${productModel.price}',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '\$${productModel.price}',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Row(
-                      children: List.generate(
-                        productModel.colors.length,
-                        (index) => Container(
-                          width: 18,
-                          height: 18,
-                          margin: const EdgeInsets.only(right: 4),
-                          decoration: BoxDecoration(
-                            color: productModel.colors[index],
-                            shape: BoxShape.circle,
+                      Row(
+                        children: List.generate(
+                          productModel.colors.length,
+                          (index) => Container(
+                            width: 18,
+                            height: 18,
+                            margin: const EdgeInsets.only(right: 4),
+                            decoration: BoxDecoration(
+                              color: productModel.colors[index],
+                              shape: BoxShape.circle,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             ),
           ),
+          Positioned(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                  color: kPrimaryColor,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(10),
+                  ),
+                ),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: const Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                    size: 22,
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
