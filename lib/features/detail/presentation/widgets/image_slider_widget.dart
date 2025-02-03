@@ -15,7 +15,10 @@ class ImageSliderWidget extends StatelessWidget {
       height: 250,
       child: PageView.builder(
         itemBuilder: (context, index) {
-          return Image.asset(image);
+          return Hero(
+            tag: image,
+            child: Image.asset(image),
+          );
         },
       ),
     );
