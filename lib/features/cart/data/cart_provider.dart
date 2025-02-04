@@ -17,8 +17,18 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  incrementQtn(int index) => _cart[index].quantity++;
-  decrementQtn(int index) => _cart[index].quantity--;
+  incrementQtn(int index) {
+    _cart[index].quantity++;
+    notifyListeners();
+  }
+
+  decrementQtn(int index) {
+    if (_cart[index].quantity <= 1) {
+      return;
+    }
+    _cart[index].quantity--;
+    notifyListeners();
+  }
 
   totalPrice() {
     double total1 = 0.0;
