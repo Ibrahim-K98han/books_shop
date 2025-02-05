@@ -1,10 +1,17 @@
+import 'package:ecom_provider/features/favorite/data/favorite_provider.dart';
+import 'package:ecom_provider/features/home/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class DetailsCustomAppBar extends StatelessWidget {
-  const DetailsCustomAppBar({super.key});
+  final ProductModel productModel;
+  const DetailsCustomAppBar({
+    super.key,
+    required this.productModel,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Row(
@@ -44,10 +51,15 @@ class DetailsCustomAppBar extends StatelessWidget {
                   backgroundColor: Colors.white,
                   padding: const EdgeInsets.all(10),
                 ),
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.favorite_border,
+                onPressed: () {
+                  provider.toggleFavorite(productModel);
+                },
+                icon: Icon(
+                  provider.isExist(productModel)
+                      ? Icons.favorite
+                      : Icons.favorite_border,
                   size: 25,
+                  color: Colors.black,
                 ),
               ),
             ],

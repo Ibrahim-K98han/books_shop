@@ -10,6 +10,10 @@ class CategoryModel {
 
 final List<CategoryModel> categories = [
   CategoryModel(
+    title: '''All''',
+    image: 'images/quran_hadit.png',
+  ),
+  CategoryModel(
     title: '''Qur'an and\n Tafseer''',
     image: 'images/quran_hadit.png',
   ),

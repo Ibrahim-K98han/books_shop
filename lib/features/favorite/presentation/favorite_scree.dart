@@ -109,35 +109,6 @@ class _FavoriteScreeState extends State<FavoriteScree> {
                               size: 25,
                             ),
                           ),
-                          const SizedBox(height: 10),
-                          Container(
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: kContentColor,
-                              border: Border.all(
-                                color: Colors.grey.shade200,
-                                width: 2,
-                              ),
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Row(
-                              children: [
-                                const SizedBox(width: 10),
-                                productQuantity(Icons.add, index),
-                                const SizedBox(width: 10),
-                                Text(
-                                  cartItems.quantity.toString(),
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                const SizedBox(width: 10),
-                                productQuantity(Icons.remove, index),
-                                const SizedBox(width: 10),
-                              ],
-                            ),
-                          )
                         ],
                       ),
                     )

@@ -34,7 +34,9 @@ class _DetailScreenState extends State<DetailScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const DetailsCustomAppBar(),
+              DetailsCustomAppBar(
+                productModel: widget.productModel,
+              ),
               //Image Slider
               ImageSliderWidget(
                 image: widget.productModel.img,
